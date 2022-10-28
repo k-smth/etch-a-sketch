@@ -12,10 +12,17 @@ function createDivs(rows, cols) {
 
 createDivs(16, 16);
 
+
 const squares = document.querySelectorAll('.square')
 
-squares.forEach(function(square) {
-    square.addEventListener('click', function changeColor(e) {
-        square.style.backgroundColor = 'black';
-    })
-});
+ squares.forEach(function(square) {
+    square.addEventListener('mouseover', changeColor)
+    square.addEventListener('mousedown', changeColor)
+}); 
+
+function changeColor(e) {
+    if(e.type === 'mouseover') {
+        e.target.style.backgroundColor = 'black';
+    }
+}
+
